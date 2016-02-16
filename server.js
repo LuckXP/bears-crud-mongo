@@ -22,12 +22,6 @@ router.get('/', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!'});
 });
 
-app.use('/api', router);
-
-app.listen(port);
-console.log('Magic happens on port ' + port);
-
-
 router.route('/bears')
 	.post(function(req, res) {
 		var bear = new Bear();
@@ -53,3 +47,19 @@ router.route('/bears')
 			}
 		})
 	});
+
+router.route('/bears/:bear_id')
+	.get(function(req, res) {
+		Bear.findById(req.params.bear_id, function(err, bear) {
+			if(err){
+				console.log(err);
+			} else {
+				res.json(bear);
+			}
+		})	
+	});
+
+app.use('/api', router);
+
+app.listen(port);
+console.log('Magic happens on port ' + port);
