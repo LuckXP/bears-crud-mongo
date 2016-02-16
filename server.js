@@ -45,6 +45,11 @@ router.route('/bears')
 		})
 	})
 	.get(function(req, res) {
-
-		res.json("get works");
+		Bear.find(function(err, bears){
+			if(err){
+				console.log(err);
+			} else {
+				res.json(bears);
+			}
+		})
 	});
