@@ -9,6 +9,15 @@ mongoose.connect('mongodb://localhost/animals');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.set('view engine', 'ejs');
+app.get('/', function(req, res) {
+	res.render('index', {title: 'show this ugly title object'});
+});
+
+app.get('/about', function(req, res) {
+	res.render('about', {title: 'show this ugly title object'});
+});
+
 var port = process.env.PORT || 8080;
 
 var router = express.Router();
