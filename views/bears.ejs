@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-		<title>My First App</title>
+		<title>bears</title>
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		
@@ -18,6 +18,7 @@
 				<p>
 					<a href="/" class="btn btn-primary btn-lg">Home</a>
 				</p>
+				<p>
 			</div>
 		</div>
 		<section>
@@ -35,21 +36,13 @@
 				  		</tr>
 				  	</thead>
 				  	<tbody>
-				  		<tr>
-				  			<td>dumb bear</td>
-				  			<td>too old</td>
-				  			<td>male</td>
-				  		</tr>
-				  		<tr>
-				  			<td>young bear</td>
-				  			<td>too young</td>
-				  			<td>male</td>
-				  		</tr>
-				  		<tr>
-				  			<td>nice bear</td>
-				  			<td>27</td>
-				  			<td>female</td>
-				  		</tr>
+					  	<% for(var i = 0; i < bears.length; i++) { %>	
+					  		<tr>
+					  			<td> <%= bears[i].name %> </td>
+					  			<td> <%= bears[i].age %> </td>
+					  			<td> <%= bears[i].gender %> </td>
+					  		</tr>
+					  	<% }; %>
 				  	</tbody>
 				  </table>
 			</div>
