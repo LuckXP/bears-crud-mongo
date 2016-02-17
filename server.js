@@ -15,7 +15,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/about', function(req, res) {
-	res.render('about', {title: 'show this ugly title object'});
+	var data = {};
+	data.name = "Jesse Sindler";
+	data.time = new Date();
+	data.title = "About";
+	res.render('about', data);
 });
 
 var port = process.env.PORT || 8080;
