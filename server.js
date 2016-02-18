@@ -9,6 +9,8 @@ mongoose.connect('mongodb://localhost/animals');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
 	res.render('index', {title: 'show this ugly title object'});
