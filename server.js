@@ -52,4 +52,4 @@ router.get('/', function(req, res) {
 app.use('/api', bearRouter);
 
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('👹👹👹👹👹👹👹👹👹👹👹💀Magic happens on port ' + port +'💀👹👹👹👹👹👹👹👹👹👹');
