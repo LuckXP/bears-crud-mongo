@@ -42,7 +42,13 @@ var addBear = function(event) {
 	  				</button> \
 	  			</td> \
 	  		</tr>');
+		$('#bearForm')[0].reset();
+		// $("#name")[0].reset();
+		// $("#age")[0].reset();
+		// $("#gender").reset();
 	})
+
+
 }
 $('#addBear').on('click', addBear);
 $('.deleteBear').on('click', deleteBear);
